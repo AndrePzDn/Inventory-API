@@ -1,0 +1,16 @@
+services:
+  mysql-database:
+    container_name: stock-manager
+    image: mysql
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: stock
+      MYSQL_DATABASE: stock
+      MYSQL_USER: stock
+      MYSQL_PASSWORD: stock
+    volumes:
+      - mysql-stock:/var/lib/mysql
+
+volumes:
+  mysql-stock:
